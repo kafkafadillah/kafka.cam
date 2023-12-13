@@ -5,7 +5,21 @@ import defaultProfileImage from "../../public/img/profil/kafka.png";
 import ProfileRenderOther from "./ProfileRenderOther";
 import ProfileRenderUser from "./ProfileRenderUser";
 
-export default function Profile({ fotoDiProfile, imgDisukai, closeProfile, clickedImg, handleClickedLike, collcetButtonColor, likeButtonColor, clickedImgId, handleClickedProfile, handleCollectedImg, imgUpdatedLike, objectProfile }) {
+export default function Profile({
+  fotoDiProfile,
+  imgDisukai,
+  profileUserActive,
+  closeProfile,
+  clickedImg,
+  handleClickedLike,
+  collcetButtonColor,
+  likeButtonColor,
+  clickedImgId,
+  handleClickedProfile,
+  handleCollectedImg,
+  imgUpdatedLike,
+  objectProfile,
+}) {
   const [overlayImg, setOverlayImg] = useState([]);
   const [showOverlay, setShowOverlay] = useState(false);
   const [photoDiProfile, setPhotoDiProfile] = useState(fotoDiProfile);
@@ -80,7 +94,6 @@ export default function Profile({ fotoDiProfile, imgDisukai, closeProfile, click
           </div>
           <div className="profile-body">
             <div className="sec-content">
-              {/* <ProfileRenderUser /> */}
               <div className="infinite">
                 <ProfileRenderOther photoDiProfile={photoDiProfile} handleClickImg={handleClickImg} />
               </div>

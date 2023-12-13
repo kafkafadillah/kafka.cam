@@ -11,7 +11,7 @@ export default function SectionHeader({ dataCategory, handleChangeDropdownOption
         ))}
       </div>
       <div className="sec-header">
-        <h3>Trending</h3>
+        <h3>For You</h3>
         <div className="sec-dropdown">
           <select value={dropdown} onChange={handleChangeDropdownOption}>
             <option value="all">All</option>

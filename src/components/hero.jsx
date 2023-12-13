@@ -18,7 +18,7 @@ export default function Hero({ onSearch }) {
     <div className="hero">
       <div className="hero-content">
         <h1>Kafka</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad, in.</p>
+        <p>The internet’s source for visuals.</p>
         <input type="text" value={search} onChange={handleSearch} placeholder="Search..." />
       </div>
     </div>

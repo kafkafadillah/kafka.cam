@@ -23,6 +23,7 @@ function App() {
   const [orientationBtn, setOrientationBtn] = useState(null);
   const [fotoDiProfile, setFotoDiProfile] = useState([]);
   const [objectProfile, setObjecteProfile] = useState(null);
+  const [profileUserActive, setProfileUserActive] = useState(null);
 
   const handleSearch = (searchValue) => {
     if (searchValue === null) {
@@ -40,6 +41,13 @@ function App() {
     setUsernameProfileActive(clickedImg.user.username);
     setObjecteProfile(clickedImg);
     setProfileActive(true);
+  };
+
+  const handleActiveUserProfile = (clickedImg) => {
+    setUsernameProfileActive(clickedImg.user.username);
+    setObjecteProfile(clickedImg);
+    setProfileActive(true);
+    setProfileUserActive(true);
   };
 
   const handleCloseProfile = () => {
@@ -62,6 +70,23 @@ function App() {
     console.log("ini search value", search);
   }, [search]);
 
+  // useEffect(() => {
+  //   if (profileUserActive === true) {
+  //     const clickedImg = {
+  //       user: {
+  //         username: "kafka",
+  //         name: "khafka fadillah",
+  //         total_potos: 0,
+  //         total_likes: 0,
+  //         profile_image: {
+  //           large: "./profil/kafka.png",
+  //         },
+  //       },
+  //     };
+  //     handleActiveUserProfile(clickedImg);
+  //   }
+  // }, [profileUserActive]);
+
   // GET /users/:username
   // GET /users/:username/collections
   // GET /photos/random
@@ -69,7 +94,7 @@ function App() {
   // xCfys0Juz-mBnA9LzZyQY8fvtpOi8-Cxead3BSOleqw
 
   const fetchImages = () => {
-    const APIKEY = "GfRs2UtEgadAS1J3g7Mvt5OWm58wYDIPazWtt8QB9zU";
+    const APIKEY = "xCfys0Juz-mBnA9LzZyQY8fvtpOi8-Cxead3BSOleqw";
     const randomUrl = `photos/random?client_id=${APIKEY}&count=5`;
     const profilUrl = `users/${usernameProfileActive}/photos?client_id=${APIKEY}`;
     const orientationUrl = `photos/random?orientation=${orientationBtn}&client_id=${APIKEY}&count=2`;
@@ -106,9 +131,9 @@ function App() {
 
   return (
     <>
+      <Header handleClickProfile={handleActiveUserProfile} handleCloseProfile={handleCloseProfile} />
       {!profileActive && (
         <>
-          <Header className={!profileActive ? "hide-component" : ""} />
           <Hero className={!profileActive ? "hide-component" : ""} onSearch={handleSearch} />
         </>
       )}
@@ -127,6 +152,7 @@ function App() {
         fotoDiProfile={fotoDiProfile}
         objectProfile={objectProfile}
         closeProfile={handleCloseProfile}
+        profileUserActive={profileUserActive}
       />
     </>
   );
