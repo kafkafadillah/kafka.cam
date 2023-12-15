@@ -94,11 +94,11 @@ function App() {
   // xCfys0Juz-mBnA9LzZyQY8fvtpOi8-Cxead3BSOleqw
 
   const fetchImages = () => {
-    const APIKEY = "xCfys0Juz-mBnA9LzZyQY8fvtpOi8-Cxead3BSOleqw";
+    const APIKEY = "GfRs2UtEgadAS1J3g7Mvt5OWm58wYDIPazWtt8QB9zU";
     const randomUrl = `photos/random?client_id=${APIKEY}&count=5`;
     const profilUrl = `users/${usernameProfileActive}/photos?client_id=${APIKEY}`;
-    const orientationUrl = `photos/random?orientation=${orientationBtn}&client_id=${APIKEY}&count=2`;
-    const searchUrl = `search/photos?page=1&query=${search}&client_id=${APIKEY}`;
+    const orientationUrl = `photos/random?orientation=${orientationBtn}&client_id=${APIKEY}&count=10`;
+    const searchUrl = `search/photos?page=1&query=${search}&client_id=${APIKEY}&count=10`;
     if (searchActive === true) {
       axios.get(`https://api.unsplash.com/${searchUrl}`).then((response) => {
         console.log(response.data.results);

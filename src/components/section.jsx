@@ -25,7 +25,7 @@ const dataCategory = [
   },
 ];
 
-export default function Section({ onClickedImg, search, closeProfile, searchActive, objectProfile, fotoDiProfile, foto, fetchImages, orientation, isScrollPage, fotoScroll, updateFoto, originalPhotos, profileActive }) {
+export default function Section({ onClickedImg, profileUserActive, search, closeProfile, searchActive, objectProfile, fotoDiProfile, foto, fetchImages, orientation, isScrollPage, fotoScroll, updateFoto, originalPhotos, profileActive }) {
   const [dropdown, setDropdown] = useState("all");
   const [categoryFilter, setCategoryFilter] = useState([]);
   const [clickedImg, setClickedImg] = useState([]);
@@ -231,6 +231,7 @@ export default function Section({ onClickedImg, search, closeProfile, searchActi
             imgUpdatedLike={imgUpdatedLike}
             objectProfile={objectProfile}
             imgDisukai={imgDisukai}
+            profileUserActive={profileUserActive}
           />
         ) : (
           ""
